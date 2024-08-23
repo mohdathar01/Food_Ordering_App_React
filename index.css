@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  height: 100px;
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+.logo-container {
+  height: 100px;
+  width: 200px;
+}
+.logo-container img {
+  height: 100px;
+  width: 199px;
+  z-index: -1;
+  padding: 2px;
+}
+.nav-items {
+  height: 100px;
+  width: 85%;
+}
+.ull {
+  text-align: end;
+  padding: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  list-style: none;
+}
+.search {
+  margin: 30px;
+}
+.RestaurentContainer {
+  width: 100%;
+  /* display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; */
+}
+.RestaurentCard {
+  height: 320px;
+  width: 220px;
+  border: 1px solid black;
+  margin-top: 20px;
+  margin: 30px;
+}
+.img-container-res-card {
+}
+.img-container-res-card2 {
+  height: 120px;
+  width: 217px;
+  padding: 1px;
+}
