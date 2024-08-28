@@ -34,26 +34,45 @@
 
   list-style: none;
 }
-.search {
+/* .search {
   margin: 30px;
-}
+} */
 .RestaurentContainer {
   width: 100%;
-  /* display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; */
+  display: flex;
+  flex-wrap: wrap;
 }
 .RestaurentCard {
   height: 320px;
   width: 220px;
-  border: 1px solid black;
+  background-color: rgb(224, 217, 217);
   margin-top: 20px;
-  margin: 30px;
+  margin: 20px;
 }
-.img-container-res-card {
+.RestaurentCard:hover {
+  border: 1px solid black;
+  cursor: pointer;
 }
+
 .img-container-res-card2 {
   height: 120px;
   width: 217px;
   padding: 1px;
+}
+.res-name-container {
+  font-size: 15px;
+  padding-top: 15px;
+}
+.foods {
+  padding-top: 10px;
+}
+.Rating {
+  padding-top: 10px;
+}
+.timeofdelivery {
+  padding-top: 15px;
+}
+.filter-btn {
+  margin: 30px;
+  cursor: pointer;
 }
