@@ -38,16 +38,19 @@
   margin: 30px;
 } */
 .RestaurentContainer {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 .RestaurentCard {
   height: 320px;
   width: 220px;
   background-color: rgb(224, 217, 217);
-  margin-top: 20px;
-  margin: 20px;
+  margin-top: 100px;
+   
 }
 .RestaurentCard:hover {
   border: 1px solid black;
@@ -75,4 +78,13 @@
 .filter-btn {
   margin: 30px;
   cursor: pointer;
+  height: 29px;
+  width: 100px;
 }
+.iambutton{
+  height: 250px;
+  width: 250px;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+ 

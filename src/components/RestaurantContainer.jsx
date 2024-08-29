@@ -1,40 +1,52 @@
 // import { resData } from "../utils/mockData";
 import RestaurentCard from "./RestaurentCard";
+import { useState,useEffect } from "react";
 // dont use index as key its a bad practice,use unique as a key its a good practice
 const RestaurentContainer = () => {
-  const listOfRestaurent = [
-    {
-      data: {
-        id: "256139",
-        name: "koki restaurent",
-        cloudinaryImageId:
-          "RX_THUMBNAIL/IMAGES/VENDOR/2024/4/17/2ce18342-6c04-4ebc-9725-788819ddaa56_256139.JPG",
+  let [listOfRestaurent,setlistOfRestaurent]=useState( []);
+     
+  
+useEffect(()=>{
 
-        costForTwo: "₹250 for two",
-        cuisines: ["Bakery", "Beverages", "Sweets"],
-        avgRating: 4.6,
+  fetchData();
+},[])
 
-        deliveryTime: 36,
-      },
-      data: {
-        id: "256140",
-        name: "Rajaji ki Haveli",
-        cloudinaryImageId:
-          "RX_THUMBNAIL/IMAGES/VENDOR/2024/4/17/6e97ac8f5c89213610309ef1940afa05",
+const fetchData= async()=>{
+  const data= await fetch(
+   
+ "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65200&lng=77.16630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
 
-        costForTwo: "₹250 for two",
-        cuisines: ["Bakery", "Beverages", "Sweets"],
-        avgRating: 3.5,
+ const  json=await data.json();
+ console.log(json);
+};
 
-        deliveryTime: 36,
-      },
-    },
-  ];
+
+   
   return (
     <div className="RestaurentContainer">
-      {listOfRestaurent.map((restaurant, index) => (
+      <div className="iambutton">
+    <button
+    className="filter-btn"
+      
+    onClick={() => {
+    const filteredList=listOfRestaurent.filter(
+        (res)=>res.avgRating > 4
+      );
+      setlistOfRestaurent(filteredList);
+    }}
+  >
+    Top Rated Restaurants
+  </button>
+  </div>
+<div>
+  
+      {listOfRestaurent.map((restaurant ) => (
         <RestaurentCard key={restaurant.id} resObj={restaurant} />
+       
+        
       ))}
+       
+      </div>
     </div>
   );
 };
