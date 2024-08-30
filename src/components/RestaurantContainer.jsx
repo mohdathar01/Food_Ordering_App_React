@@ -1,6 +1,6 @@
-// import { resData } from "../utils/mockData";
-import RestaurentCard from "./RestaurentCard";
 import { useState, useEffect } from "react";
+import RestaurentCard from "./RestaurentCard";
+import Shimmer from "./Shimmer";
 // dont use index as key its a bad practice,use unique as a key its a good practice
 const RestaurentContainer = () => {
   let [listOfRestaurent, setlistOfRestaurent] = useState([]);
@@ -16,14 +16,18 @@ const RestaurentContainer = () => {
 
     const json = await data.json();
     console.log(
-      json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
     setlistOfRestaurent(
-      json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };
+
+  if(listOfRestaurent.length===0){
+    return  <Shimmer/>
+  }
 
   return (
     <div className="RestaurentContainer">
