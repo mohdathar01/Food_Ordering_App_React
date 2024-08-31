@@ -9,6 +9,7 @@
   border: 1px solid black;
   display: flex;
   justify-content: space-between;
+  background-color: #fcf8f8;
 }
 .logo-container {
   height: 100px;
@@ -34,16 +35,21 @@
 
   list-style: none;
 }
+.loginbutton {
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
 /* .search {
   margin: 30px;
 } */
 .RestaurentContainer {
 }
 .RestaurentCard {
-  height: 320px;
+  height: 300px;
   width: 220px;
-  background-color: rgb(224, 217, 217);
-  margin-top: 100px;
+  background-color: rgb(248, 243, 243);
+  margin-bottom: 50px;
 }
 .container-flex {
   display: flex;
@@ -75,25 +81,46 @@
   padding-top: 15px;
 }
 .filter-btn {
-  margin: 30px;
   cursor: pointer;
-  height: 29px;
-  width: 100px;
+  height: 40px;
+  width: 150px;
+  margin-left: 50px;
 }
 .iambutton {
-  height: 250px;
-  width: 250px;
   padding-top: 0px;
   margin-top: 0px;
 }
 
-.shimmer-container{
+.shimmer-container {
   display: flex;
   flex-wrap: wrap;
 }
-.shimmer-card{
+.shimmer-parent-div {
+  height: 320px;
+  width: 220px;
+  margin: 20px 20px 40px 20px;
+}
+.shimmer-card {
   height: 300px;
   width: 200px;
-  background-color:  #f0f0f0;
-  margin: 100px 20px 40px 20px;
+  background-color: #b9b2b2;
+}
+.below-border {
+  height: 10px;
+  width: 200px;
+  background-color: #b9b2b2;
+  margin-top: 3px;
+}
+.below-borderr {
+  height: 10px;
+  width: 200px;
+  background-color: #b9b2b2;
+  margin-top: 3px;
+}
+.iambutton {
+  display: flex;
+  margin: 30px;
+}
+.search-fiter-button {
+  margin-top: 3px;
 }

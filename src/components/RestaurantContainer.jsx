@@ -3,7 +3,8 @@ import RestaurentCard from "./RestaurentCard";
 import Shimmer from "./Shimmer";
 // dont use index as key its a bad practice,use unique as a key its a good practice
 const RestaurentContainer = () => {
-  let [listOfRestaurent, setlistOfRestaurent] = useState([]);
+  const [listOfRestaurent, setlistOfRestaurent] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -16,27 +17,50 @@ const RestaurentContainer = () => {
 
     const json = await data.json();
     console.log(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setlistOfRestaurent(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
-  if(listOfRestaurent.length===0){
-    return  <Shimmer/>
-  }
+  // if(listOfRestaurent.length===0){
+  //   return  <Shimmer/>
+  // }
 
-  return (
+  return listOfRestaurent.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="RestaurentContainer">
       <div className="iambutton">
+        <div className="searchhere">
+          <input
+            type="text"
+            className="searchbox"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <br />
+          <button
+            className="search-fiter-button"
+            onClick={() => {
+              const filteredListofResnt = listOfRestaurent.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              console.log(filteredListofResnt);
+              setlistOfRestaurent(filteredListofResnt);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
             const filteredList = listOfRestaurent.filter(
-              (res) => res.avgRating > 4
+              (res) => res.info.avgRating > 4
             );
             setlistOfRestaurent(filteredList);
           }}

@@ -2,7 +2,7 @@ import { CLOUDNARY_IMAGE_ID } from "../utils/constant";
 
 const RestaurentCard = (props) => {
   const { resObj } = props;
-  console.log(resObj?.info);
+  // console.log(resObj?.info);
 
   return (
     <div className="RestaurentCard">
@@ -14,19 +14,19 @@ const RestaurentCard = (props) => {
         />
       </div>
       <div className="res-name-container">
-        <h4>{resObj.name}</h4>
+        <h4>{resObj.info?.name}</h4>
 
         {/* <h4>{resObj.cuisines.join(",")}</h4> */}
       </div>
 
       <div className="foods">
-        <h4>{resObj.locality} </h4>
+        <h4>{resObj.info?.locality} </h4>
       </div>
-      <div className="Rating">{resObj.avgRating} </div>
+      <div className="Rating">{resObj.info?.avgRating} </div>
       <div className="timeofdelivery">
-        <h4>{resObj.costForTwo}</h4>
+        <h4>{resObj.info?.costForTwo}</h4>
         <br />
-        <h4>{resObj.deliveryTime}</h4>
+        <h4>{resObj.info?.deliveryTime}</h4>
       </div>
     </div>
   );
