@@ -5,6 +5,7 @@ import Shimmer from "./Shimmer";
 const RestaurentContainer = () => {
   const [listOfRestaurent, setlistOfRestaurent] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState(""); //only for git push
 
   useEffect(() => {
     fetchData();
