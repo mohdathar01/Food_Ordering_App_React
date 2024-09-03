@@ -4,8 +4,8 @@ import Shimmer from "./Shimmer";
 // dont use index as key its a bad practice,use unique as a key its a good practice
 const RestaurentContainer = () => {
   const [listOfRestaurent, setlistOfRestaurent] = useState([]);
+  const [filteredListofResnt, setfilteredListofResnt] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [searchText, setSearchText] = useState(""); //only for git push
 
   useEffect(() => {
     fetchData();
@@ -21,6 +21,9 @@ const RestaurentContainer = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setlistOfRestaurent(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setfilteredListofResnt(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
@@ -51,7 +54,7 @@ const RestaurentContainer = () => {
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               console.log(filteredListofResnt);
-              setlistOfRestaurent(filteredListofResnt);
+              setfilteredListofResnt(filteredListofResnt);
             }}
           >
             Search
@@ -61,17 +64,18 @@ const RestaurentContainer = () => {
           className="filter-btn"
           onClick={() => {
             const filteredList = listOfRestaurent.filter(
-              (res) => res.info.avgRating > 4
+              (res) => res.info.avgRating > 4.5
             );
-            setlistOfRestaurent(filteredList);
+            setfilteredListofResnt(filteredList);
+            console.log(filteredList);
           }}
         >
           Top Rated Restaurants
         </button>
       </div>
       <div className="container-flex">
-        {listOfRestaurent.map((restaurant) => (
-          <RestaurentCard key={restaurant.id} resObj={restaurant} />
+        {filteredListofResnt.map((restaurant) => (
+          <RestaurentCard key={restaurant.info.id} resObj={restaurant} />
         ))}
       </div>
     </div>
