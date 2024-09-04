@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client"; // Corrected this line
 // import chknbryn from "./chicken-biryani.jpg";
 import Header from "./components/Header";
 import { Outlet } from "react-router-dom";
-
+import RestaurantMenu from "./components/RestaurantMenu";
 import Error from "./components/Error";
 import About from "./components/About";
 import Contacts from "./components/Contacts";
@@ -36,6 +36,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contacts",
         element: <Contacts />,
+      },
+      {
+        path: "/restaurantsmenu/:resId",
+        element: <RestaurantMenu />,
       },
     ],
     errorElement: <Error />,
