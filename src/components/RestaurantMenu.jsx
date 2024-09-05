@@ -15,16 +15,20 @@ const RestaurantMenu = () => {
     );
     const json = await data.json();
     console.log(json);
+    console.log(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.categories[0]?.itemCards[0]?.card?.info?.name)
     setResInfo(json.data);
   };
+  // const {name}=(resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.categories[0]?.itemCards[0]?.card?.info?.name); 
 
   return resInfo === null ? (
     <Shimmer />
   ) : (
     <div>
       <h2>
-        {" "}
-        {resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.card[0]}
+         
+        {name}
+
+        
       </h2>
       <h3>Menu</h3>
       <ul>
