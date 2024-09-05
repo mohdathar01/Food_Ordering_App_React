@@ -124,3 +124,22 @@
 .search-fiter-button {
   margin-top: 3px;
 }
+.resmenu {
+  height: auto;
+  width: 250px;
+  border: 1px solid black;
+  margin: 10px;
+}
+.imgofresmenu {
+  height: 150px;
+  width: 250px;
+  border-bottom: 1px solid black;
+}
+.namee {
+  font-size: 20px;
+  font-weight: 900;
+}
+.sweets h3 {
+  font-size: 20px;
+  font-weight: 200;
+}
