@@ -12,24 +12,31 @@ const RestaurantMenu = () => {
 
   const fetchMenu = async () => {
     const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.65200&lng=77.16630&restaurantId=253714&catalog_qa=undefined&submitAction=ENTER"
+      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.65200&lng=77.16630&restaurantId=253714&catalog_qa=undefined&submitAction=ENTER"
     );
     const json = await data.json();
     console.log(json.data);
 
-    console.log(
+    console.log("this is you are searching for",
       resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-        ?.card?.itemCards[0]?.card?.info || {}
+        ?.card || {}
     );
     setResInfo(json.data);
   };
+  if  (resInfo === null )return
+    <Shimmer />;
+  
   const { name, price, imageId } =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
-      ?.itemCards[0]?.card?.info || {};
+  resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+  ?.card  
+      // resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
+      // ?.itemCards[0]?.card?.info || {};
 
-  return resInfo === null ? (
-    <Shimmer />
-  ) : (
+      const { itemCards  } =
+      resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+      console.log(itemCards)
+
+  return    (
     <div className="resmenu">
       <div>
         <img
@@ -42,10 +49,11 @@ const RestaurantMenu = () => {
         <h2 className="namee">{name}</h2>
       </div>
       <div className="sweets">
-        <h3>Laddu</h3>
-        <h3>Gulab Jamun</h3>
-        <h3>Samosa</h3>
-        <h3>Kuch nhi</h3>
+        
+        {/* <h3>{itemCards[0].card.info.name}</h3>
+        <h3>{itemCards[1].card.info.name}</h3>
+        <h3>{itemCards[2].card.info.name}</h3>
+        <h3>{itemCards[3].card.info.name}</h3> */}
       </div>
       <div>
         <p>{price / 100}.00 for two persons</p>
