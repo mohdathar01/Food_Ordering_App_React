@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import RestaurentCard from "./RestaurentCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import { RES_CONTAINER_API } from "../utils/constant";
 // dont use index as key its a bad practice,use unique as a key its a good practice
 const RestaurentContainer = () => {
   const [listOfRestaurent, setlistOfRestaurent] = useState([]);
@@ -12,9 +14,7 @@ const RestaurentContainer = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65200&lng=77.16630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RES_CONTAINER_API);
 
     const json = await data.json();
     console.log(
@@ -75,7 +75,13 @@ const RestaurentContainer = () => {
       </div>
       <div className="container-flex">
         {filteredListofResnt.map((restaurant) => (
-          <RestaurentCard key={restaurant.info.id} resObj={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurantsmenu/" + restaurant.info.id}
+          >
+            {" "}
+            <RestaurentCard resObj={restaurant} />
+          </Link>
         ))}
       </div>
     </div>

@@ -1,23 +1,17 @@
 import React from "react";
+import User from "./User";
+import UserClass from "./UserClass";
 
 const About = () => {
   return (
     <div>
-      <div>
-        <h1>About Us </h1>
-        <p>
-          In 2011, Sriharsha Majety and Nandan Reddy designed an e-commerce
-          website called Bundl to facilitate courier service and shipping within
-          India.[6] Bundl was halted in 2014 and rebranded to enter the food
-          delivery market.[7] Majety and Reddy approached Rahul Jaimini,
-          formerly with Myntra, and founded Swiggy in August 2014.[8][6][7] By
-          2015, Swiggy expanded its food delivery operations from just Bangalore
-          to eight Tier 1 cities across India.[9][10] At the time, the food
-          delivery sector was in turmoil as several notable startups, such as
-          Foodpanda (later acquired by Ola Cabs), TinyOwl (later acquired by
-          Zomato) and Ola Cafe (later closed) were struggling
-        </p>
-      </div>
+      <h1>About Us </h1>
+      <h2>Its Me</h2>
+      <User name={"Athar from props"} location={"uttar pradesh from props"} />
+      <UserClass
+        name={"Athar from props"}
+        location={"uttar pradesh from props"}
+      />
     </div>
   );
 };
