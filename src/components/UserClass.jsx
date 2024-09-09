@@ -10,22 +10,35 @@ class UserClass extends React.Component {
     //   //if more state variable and we want upate only some it will only upddate that varibale that w want
     // };
     this.state = {
-      userInfo: {},
+      userInfo: {
+        login:"M... A....",
+        id:"0000000",
+        avatar_url:"Loading Photo",
+
+
+      },
     };
   }
   async componentDidMount() {
     const data = await fetch("https://api.github.com/users/mohdathar01");
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     this.setState({
       userInfo: json,
     });
+
   }
+  //when we leave the page componentwillunmount will called
+  // componentWillUnmount(){
+  //   console.log("component will unmount called");
+  // }
 
   render() {
     //destructuring  props in class based comp below
 
     // const { count, count2 } = this.state;
+    const {login,id,avatar_url}=this.state.userInfo;
+     
 
     return (
       <div className="usercard">
@@ -35,7 +48,9 @@ class UserClass extends React.Component {
         <h2>count2={count2}</h2> */}
 
         {/* <h2>Name:{this.props.name}</h2> */}
-        <h2>Name:{this.state.userInfo.login}</h2>
+        <img src={avatar_url} alt="" />
+        <h2>Your Login Name:{login}</h2>
+        <h2>Your Login Id:{id}</h2>
 
         {/* <h3>Location:{this.props.location}</h3> */}
         {/* <h3>Location:{location}</h3> */}

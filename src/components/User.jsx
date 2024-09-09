@@ -16,6 +16,19 @@ const User = ({ name, location }) => {
   //   console.log(json);
   // }
 
+  useEffect(()=>{
+    console.log("useeffect");
+     
+
+    //the below return is the useEffect return for cleanup while leaving this page || or same as component will mount in class based component
+    return()=>{
+      console.log("useEffect return for cleanup while leaving this page || or same as component will mount in class based component")
+    }
+
+
+  },[]);
+  console.log("render");
+
   return (
     <div className="usercard">
       <h2>Count={count}</h2>
