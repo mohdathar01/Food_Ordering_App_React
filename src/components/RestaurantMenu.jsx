@@ -3,29 +3,33 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import { CHILD_OF_CARD_CID_RESMENU_COMP } from "../utils/constant";
-import { CHILDCARD_ID_USEPARAMS } from "../utils/constant";
+import useRestaurentMenu from "../utils/useRestaurentMenu";
+
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState();
-
+  // const [resInfo, setResInfo] = useState();
   const { resId } = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
+  const resInfo =useRestaurentMenu(resId);
 
-  const fetchMenu = async () => {
-    const data = await fetch(CHILDCARD_ID_USEPARAMS + resId);
-    const json = await data.json();
-    console.log(json.data);
 
-    console.log(
-      "this is you are searching for",
-      resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-        ?.card || {}
-    );
-    setResInfo(json.data);
-  };
+
+  // useEffect(() => {
+  //   fetchMenu();
+  // }, []);
+
+  // const fetchMenu = async () => {
+  //   const data = await fetch(CHILDCARD_ID_USEPARAMS + resId);
+  //   const json = await data.json();
+  //   console.log(json.data);
+
+  //   console.log(
+  //     "this is you are searching for",
+  //     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+  //       ?.card || {}
+  //   );
+  //   setResInfo(json.data);
+  // };
   if (resInfo === null) return;
   <Shimmer />;
 
