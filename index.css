@@ -151,3 +151,9 @@
   padding: 20px;
   border: 1px solid black;
 }
+.higherorderlabeloncard{
+  position: absolute;
+  background: black;
+  color: white;
+  padding: 3px;
+}

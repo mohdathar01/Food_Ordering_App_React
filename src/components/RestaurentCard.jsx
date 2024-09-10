@@ -31,4 +31,19 @@ const RestaurentCard = (props) => {
     </div>
   );
 };
+
+//higher order component
+//input-Restaurentcard=>RestaurentcardPromoted
+
+export const withPromotedLabel=(RestaurentCard)=>{
+  return(props)=>{
+    return(
+      <div>
+        {/* i have written Open in place of Promoted bcz promoted is removed from api by swiggy */}
+        <label className="higherorderlabeloncard">Open</label>
+        <RestaurentCard {...props}/>
+      </div>
+    )
+  }
+}
 export default RestaurentCard;
