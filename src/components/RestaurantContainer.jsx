@@ -3,6 +3,8 @@ import RestaurentCard from "./RestaurentCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RES_CONTAINER_API } from "../utils/constant";
+import useOnlineStatus from "../utils/useOlnineStatus";
+
 // dont use index as key its a bad practice,use unique as a key its a good practice
 const RestaurentContainer = () => {
   const [listOfRestaurent, setlistOfRestaurent] = useState([]);
@@ -17,9 +19,7 @@ const RestaurentContainer = () => {
     const data = await fetch(RES_CONTAINER_API);
 
     const json = await data.json();
-    console.log(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+
     setlistOfRestaurent(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -28,6 +28,15 @@ const RestaurentContainer = () => {
     );
   };
 
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false)
+    return (
+      <h1>
+        OOPS!!😤 Looks like you are Offline😒!!!Please check your internet
+        connection and try Again
+      </h1>
+    );
   // if(listOfRestaurent.length===0){
   //   return  <Shimmer/>
   // }
