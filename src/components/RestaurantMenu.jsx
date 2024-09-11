@@ -43,9 +43,12 @@ const RestaurantMenu = () => {
   const { itemCards } =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card || [];
-  console.log("this is itemcard console", itemCards);
+  console.log("this is itemcard console abhi wala",  resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+const category=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c.card?.card?.["@type"]=== "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+ console.log("category concole",category); 
 
-  return (
+
+return (
     <div className="resmenu">
       <div>
         <img
