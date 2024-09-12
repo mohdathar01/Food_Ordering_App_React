@@ -1,14 +1,21 @@
 import React from 'react'
+import ItemList from './ItemList';
 
 const RestaurentCategory = ({data}) => {
-    // console.log(data)
+    console.log(data);
   return (
     <div>
-        {/* {header of rescatogery} */}
+        {/* {header of rescatogery accordian} */}
          <div className='titleheader'>
-            <span>{data.title}</span>
+            <div className='childdataoftheader'>
+            <span className='datatitletext'>{data.title}({data.itemCards.length})</span>
             <span>🔽</span>
+            </div>
+            <div>
+            <ItemList items={data.itemCards}/>
+            </div>
          </div>
+         
         
     </div>
   )

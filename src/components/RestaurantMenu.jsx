@@ -40,6 +40,7 @@ return (
         />
       </div> */}
       <div className="nameofresmenu">
+       
         <h2 className="namee">{name}</h2>
       </div>
       {/* <div className="sweets">

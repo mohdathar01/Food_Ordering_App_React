@@ -169,9 +169,49 @@
   font-weight: 400;
 }
 .titleheader{
-  background-color: rgb(223, 214, 214);
-  box-shadow: 1px;
+  background-color: rgb(255, 251, 251);
+  border-bottom: 1px solid lightslategrey;
+  box-shadow: 5px 5px 5px 5px  rgb(222, 227, 231);
   padding: 10px;
   text-align: center;
+  margin: 15px 10px 15px 10px;
+  
   
 }
+.datatitletext{
+ font-weight: bold;
+ font-family: 'Times New Roman', Times, serif;
+}
+.childdataoftheader{
+  display: flex;
+  justify-content: space-between;
+
+}
+.itemsinsideone{
+  border-bottom: rgb(153, 147, 147);
+}
+.itemdescription{
+  font-size: small;
+  font-weight: 100;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.itemcardname{
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 0;
+  
+}
+ .itemcardprice{
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 0;
+  
+
+ }
+.divofnameprice{
+  padding-top: 25px;
+  display: flex;
+  align-items: flex-start;
+  
+}
+ 
