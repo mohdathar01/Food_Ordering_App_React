@@ -169,12 +169,12 @@
   font-weight: 400;
 }
 .titleheader{
-  background-color: rgb(255, 251, 251);
-  border-bottom: 1px solid lightslategrey;
-  box-shadow: 5px 5px 5px 5px  rgb(222, 227, 231);
+  background-color: rgb(235, 235, 235);
+  
+  box-shadow: 5px 5px 5px 5px  rgb(234, 235, 236);
   padding: 10px;
   text-align: center;
-  margin: 15px 10px 15px 10px;
+  margin: 15px 10px 50px 10px;
   
   
 }
@@ -189,11 +189,13 @@
 }
 .itemsinsideone{
   border-bottom: rgb(153, 147, 147);
+  
 }
 .itemdescription{
-  font-size: small;
+  font-size: 16px ;
   font-weight: 100;
   font-family: Arial, Helvetica, sans-serif;
+   padding: 15px 0px 5px 0px;
 }
 .itemcardname{
   font-size: larger;
@@ -212,6 +214,39 @@
   padding-top: 25px;
   display: flex;
   align-items: flex-start;
+ 
   
 }
+.itemimage{
+  height: 100px;
+  width: 160px;
+  text-align: right;
+  border-radius: .5rem;
+  position: relative;
+  z-index: 2;
+   
+}
+.divofpimage{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(194, 190, 190);
+  position: relative;
+}
+.btnofitem{
+  position: absolute;
+  background-color: white;
+  color: green;
+  padding: 5px 10px;
+  border-radius: .3rem;
+   z-index: 5;
+
+}
+.divisimgbtn{
+  position: relative;
+  height: 120px;
+  width: 150px;
+
+}
+
+ 
  
