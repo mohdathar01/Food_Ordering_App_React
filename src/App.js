@@ -9,6 +9,7 @@ import Error from "./components/Error";
 import About from "./components/About";
 import Contacts from "./components/Contacts";
 // import Grocery from "./components/Grocery";
+import ExtraCompforgit from "./components/ExtraCompforgit";
 import RestaurentContainer from "./components/RestaurantContainer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -47,6 +48,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/contacts",
         element: <Contacts />,
+      },
+      {
+        path:"/ExtraCompforgit",
+        element:<ExtraCompforgit/>
+
       },
       {
         path: "/grocery",
