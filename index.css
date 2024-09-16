@@ -53,7 +53,10 @@
   width: 220px;
   background-color: rgb(248, 243, 243);
   margin-bottom: 50px;
+  border-radius: .5rem;
+  
 }
+ 
 .container-flex {
   display: flex;
   justify-content: space-around;
@@ -69,19 +72,25 @@
   height: 120px;
   width: 217px;
   padding: 1px;
+  border-radius: .9rem;
 }
 .res-name-container {
   font-size: 15px;
   padding-top: 15px;
+  color: black;
 }
 .foods {
   padding-top: 10px;
+  color: black;
+  text-decoration: none;
 }
 .Rating {
   padding-top: 10px;
+  color: black;
 }
 .timeofdelivery {
   padding-top: 15px;
+  color: black;
 }
 .filter-btn {
   cursor: pointer;
@@ -154,6 +163,7 @@
   background: black;
   color: white;
   padding: 3px;
+  border-radius: .5rem;
 }
 .namee  {
   text-align: center;
@@ -249,6 +259,12 @@
   width: 150px;
 
 }
-
+.RestaurentContainer{
+  
+  width:935px ;
+  
+  margin: auto;
+   
+}
  
  
