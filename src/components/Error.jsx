@@ -5,9 +5,9 @@ const Error = () => {
   console.log(err);
   return (
     <div>
-      <h1>Oops!!!!!!!</h1>
+      {/* <h1>Oops!!!!!!!</h1>
       <p>Something Went Wrong </p>
-      <p>unexpected Error Please Go to Home</p>
+      <p>unexpected Error Please Go to Home</p> */}
       <h2>{err.status}</h2>
       <p>{err.statusText}</p>
     </div>
