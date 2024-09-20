@@ -195,7 +195,7 @@
 .childdataoftheader{
   display: flex;
   justify-content: space-between;
-
+  cursor: pointer;
 }
 .itemsinsideone{
   border-bottom: rgb(153, 147, 147);
