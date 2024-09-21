@@ -55,7 +55,7 @@ return (
       </div> */}
       <div className="pricee">
         <p>{price / 100}.00 for two persons</p>
-        {categories.map((category)=><RestaurentCategory data={category.card.card}/>)}
+        {categories.map((category)=><RestaurentCategory key={category?.card?.card?.title} data={category.card.card}/>)}
       </div>
        
     </div>

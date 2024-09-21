@@ -2,7 +2,8 @@ import React from 'react'
 import {CLOUDNARY_IMAGE_ID} from "../utils/constant";
 
 const ItemList = ({items}) => {
-    console.log("itemcard wala console",items);
+   
+     
     
   return (
     <div className='maindivofitem'> 

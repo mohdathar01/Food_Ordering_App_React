@@ -1,11 +1,13 @@
 import React from 'react'
 import ItemList from './ItemList';
+import { useState } from 'react';
 
 const RestaurentCategory = ({data}) => {
-    console.log(data);
+  const[showItem,setShowItems]=useState(false);
 
 
     const handleClick=()=>{
+      setShowItems(!showItem);
       console.log("clicked");
     }
   return (
@@ -17,7 +19,7 @@ const RestaurentCategory = ({data}) => {
             <span>🔽</span>
             </div>
             <div>
-            <ItemList items={data.itemCards}/>
+          { showItem && <ItemList items={data.itemCards}/>}
             </div>
          </div>
          
