@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { CLOUDNARY_IMAGE_ID } from "../utils/constant";
+import UserContext from "../utils/UserContext";
 
 const RestaurentCard = (props) => {
   const { resObj } = props;
-  // console.log(resObj?.info);
+  const{loggedInUser}=useContext(UserContext)
+  
 
   return (
     <div className="RestaurentCard">
@@ -26,7 +29,8 @@ const RestaurentCard = (props) => {
       <div className="timeofdelivery">
         <h4>{resObj.info?.costForTwo}</h4>
         <br />
-        <h4>{resObj.info?.deliveryTime}</h4>
+        <h4>{resObj.info?.deliveryTime}minutes</h4>
+        <h6>{loggedInUser}</h6>
       </div>
     </div>
   );

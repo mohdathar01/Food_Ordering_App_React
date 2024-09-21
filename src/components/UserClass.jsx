@@ -1,14 +1,12 @@
 import React from "react";
+import UserContext from "../utils/UserContext";
+ 
 
 class UserClass extends React.Component {
   constructor() {
     super();
 
-    // this.state = {
-    //   count: 0,
-    //   count2: 1000,
-    //   //if more state variable and we want upate only some it will only upddate that varibale that w want
-    // };
+    
     this.state = {
       userInfo: {
         login:"M... A....",
@@ -19,10 +17,12 @@ class UserClass extends React.Component {
       },
     };
   }
+
+
   async componentDidMount() {
     const data = await fetch("https://api.github.com/users/mohdathar01");
     const json = await data.json();
-    // console.log(json);
+    
     this.setState({
       userInfo: json,
     });
@@ -42,7 +42,16 @@ class UserClass extends React.Component {
 
     return (
       <div className="usercard">
-        <h2>this is from class based compoenent</h2>
+        <h2>this is from class based component</h2>
+        <div>
+          LoggedIn User:
+       {/* usecontext in class based component */}
+       <UserContext.Consumer>
+        {({loggedInUser})=> <h1>{loggedInUser}</h1>}
+       </UserContext.Consumer>
+
+       </div>
+
         {/* <h2>count={count}</h2>
 
         <h2>count2={count2}</h2> */}
