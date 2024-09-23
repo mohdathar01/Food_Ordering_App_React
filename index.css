@@ -266,5 +266,14 @@
   margin: auto;
    
 }
- 
+.showusernameininput{
+   color: black;
+  width: 140px ;
+  margin-left: 50px;
+  font-weight: 600;
+
+}
+ .myinputbox{
+  height: 25px;
+ }
  

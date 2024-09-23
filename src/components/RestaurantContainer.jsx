@@ -4,6 +4,8 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RES_CONTAINER_API } from "../utils/constant";
 import useOnlineStatus from "../utils/useOlnineStatus";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 // dont use index as key its a bad practice,use unique as a key its a good practice
 const RestaurentContainer = () => {
@@ -43,6 +45,10 @@ const RestaurentContainer = () => {
   // if(listOfRestaurent.length===0){
   //   return  <Shimmer/>
   // }
+
+  //for usecontext to update logininnfo when we input something inside input box
+  const{loggedInUser,setUserName}=useContext(UserContext);
+
 
   return listOfRestaurent.length === 0 ? (
     <Shimmer />
@@ -84,6 +90,13 @@ const RestaurentContainer = () => {
         >
           Top Rated Restaurants
         </button>
+        {/* update userName from here using useContext hook */}
+        <div className="showusernameininput">
+          <label htmlFor="">Your UserName:</label>
+         
+          <input className="myinputbox" type="text" value={loggedInUser} onChange={(e)=>setUserName(e.target.value)} />
+          
+        </div>
       </div>
       <div className="container-flex">
         {filteredListofResnt.map((restaurant) => (
