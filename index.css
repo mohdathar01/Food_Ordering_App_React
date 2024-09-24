@@ -267,11 +267,14 @@
   border-radius: 0.3rem;
 }
 .mcontainercart {
-  /* background-color: rgb(247, 244, 244); */
+  background-color: rgb(247, 244, 244);
   margin: auto;
   width: 500px;
   text-align: center;
   font-size: 30px;
+  font-weight: bold;
+   padding: 20px 50px 20px 50px;
+   margin-bottom: 20px;
 }
 .cardaddeditems {
   margin: auto;
