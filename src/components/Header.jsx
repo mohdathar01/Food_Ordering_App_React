@@ -1,15 +1,21 @@
 import img1 from "../utils/imagess/images.png";
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOlnineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
 
   const onlineStatus = useOnlineStatus();
-  const {loggedInUser}=useContext(UserContext);
-  console.log(loggedInUser);
+  const { loggedInUser } = useContext(UserContext);
+  // console.log(loggedInUser);
+
+  //Selector
+  const cartItems = useSelector((store) => store.cart.items);
+
+  console.log("its cartitems", cartItems);
 
   return (
     <div className="header">
@@ -29,7 +35,7 @@ const Header = () => {
             <Link to="/contacts">Contact Us</Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart-({cartItems.length}Items)</Link>
           </li>
           <li>
             <Link to="/grocery">Grocery</Link>

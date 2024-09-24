@@ -9,13 +9,14 @@ import Error from "./components/Error";
 import About from "./components/About";
 import Contacts from "./components/Contacts";
 // import Grocery from "./components/Grocery";
- 
+
 import RestaurentContainer from "./components/RestaurantContainer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import UserContext from "./utils/UserContext";
 import { useState } from "react";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 /*many name of chunking
 chunking
@@ -28,33 +29,29 @@ on demand loading
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
-
-
   //authentication
-  const [userName,setUserName]=useState();
+  const [userName, setUserName] = useState();
 
-  useEffect(()=>{
-    const data={
-    name:"Mohd Athar"
-  }
-  setUserName(data.name);
-  },[])
-
-
+  useEffect(() => {
+    const data = {
+      name: "Mohd Athar",
+    };
+    setUserName(data.name);
+  }, []);
 
   return (
     //if we want to provide this override value loggedinuser for whole parts or where we used context we can like below
-   //if we want to provide nested  copy below provider and change the data menas username 
-   //provider is from react toolkit
-   <Provider store={appStore}>
-   <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
-    <div className="app">
-      <Header />
-      {/* if we provide value only header uncomment just below line ,for other parts of app the loggedinuser value will be usercontext component value that is "Default user" */}
-      {/*   </UserContext.Provider> */}
-      <Outlet />
-    </div>
-    </UserContext.Provider>
+    //if we want to provide nested  copy below provider and change the data menas username
+    //provider is from react toolkit
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          {/* if we provide value only header uncomment just below line ,for other parts of app the loggedinuser value will be usercontext component value that is "Default user" */}
+          {/*   </UserContext.Provider> */}
+          <Outlet />
+        </div>
+      </UserContext.Provider>
     </Provider>
   );
 };
@@ -76,7 +73,7 @@ const appRouter = createBrowserRouter([
         path: "/contacts",
         element: <Contacts />,
       },
-       
+
       {
         path: "/grocery",
         element: (
@@ -88,6 +85,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurantsmenu/:resId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/Cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,

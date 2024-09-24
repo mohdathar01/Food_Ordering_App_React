@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import RestaurentCard,{withPromotedLabel} from "./RestaurentCard";
+import RestaurentCard, { withPromotedLabel } from "./RestaurentCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RES_CONTAINER_API } from "../utils/constant";
@@ -13,13 +13,13 @@ const RestaurentContainer = () => {
   const [filteredListofResnt, setfilteredListofResnt] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  const RestaurentCardPromoted=withPromotedLabel(RestaurentCard);
+  const RestaurentCardPromoted = withPromotedLabel(RestaurentCard);
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  console.log("ye h listof res",listOfRestaurent);
+  // console.log("ye h listof res",listOfRestaurent);
   const fetchData = async () => {
     const data = await fetch(RES_CONTAINER_API);
 
@@ -47,8 +47,7 @@ const RestaurentContainer = () => {
   // }
 
   //for usecontext to update logininnfo when we input something inside input box
-  const{loggedInUser,setUserName}=useContext(UserContext);
-
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   return listOfRestaurent.length === 0 ? (
     <Shimmer />
@@ -93,9 +92,13 @@ const RestaurentContainer = () => {
         {/* update userName from here using useContext hook */}
         <div className="showusernameininput">
           <label htmlFor="">Your UserName:</label>
-         
-          <input className="myinputbox" type="text" value={loggedInUser} onChange={(e)=>setUserName(e.target.value)} />
-          
+
+          <input
+            className="myinputbox"
+            type="text"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
         </div>
       </div>
       <div className="container-flex">
@@ -104,8 +107,11 @@ const RestaurentContainer = () => {
             key={restaurant.info.id}
             to={"/restaurantsmenu/" + restaurant.info.id}
           >
-            {restaurant.info.isOpen?<RestaurentCardPromoted resObj={restaurant}/>:<RestaurentCard resObj={restaurant} />}
-
+            {restaurant.info.isOpen ? (
+              <RestaurentCardPromoted resObj={restaurant} />
+            ) : (
+              <RestaurentCard resObj={restaurant} />
+            )}
           </Link>
         ))}
       </div>
