@@ -29,3 +29,13 @@
 -jest configuration (" npx jest --init ")
 -skip this line its only for study purpose( what is " jsdom(browser-like)" is a library which parses and interacts assembled HTML just like a browser or in one word (provide Browser like environment for testing its not browser but it has browser like features when we are not using browser))
 -Install jsdom library if we are using jest version >28 ("npm install --save-dev jest-environment-jsdom")
+
+
+# Testing Your code
+
+-create a folder named ("   __tests__  ")inside any location in your project
+-("         **/__tests__/**/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?(x)         ")
+- inside your --tests__ folder any file match .ts or .js  like ex("  Filename.test.ts or Filename.test.js  "), ("Filename.spec.js or Filename.spec.ts") will be considerd as test  file.
+- command to test once written test cases ("  npm run test   ")
+-anywhere we found double underscore combined one another we called as  __ (dunders)
+- dunders basically used for reserve purposes so nobody can make like this accidently.

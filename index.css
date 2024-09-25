@@ -290,3 +290,32 @@
 .emptycarttext {
   text-align: center;
 }
+.contactmaindiv{
+  font-weight: bold;
+  text-align: center;
+  font-size: 50px;
+  padding: 10px;
+  margin: 10px;
+   
+}
+.myform{
+  text-align: center;
+  
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 200px;
+}
+.inputoffromone ,.inputoffromtwo{
+  padding: 15px;
+  margin: 1px 10px;
+  margin-bottom: 20px;
+
+}
+.submitbtnconatct{
+  padding: 5px 12px;
+  margin: 1px 10px;
+
+}
+ 
