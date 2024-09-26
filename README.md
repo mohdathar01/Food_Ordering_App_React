@@ -39,3 +39,6 @@
 - command to test once written test cases ("  npm run test   ")
 -anywhere we found double underscore combined one another we called as  __ (dunders)
 - dunders basically used for reserve purposes so nobody can make like this accidently.
+Install ("   npm i -D @babel/preset-react  ") to make file which has extension .jsx will work in test cases means (for jsx extension file without it tets cases throw error)
+- once installed we have to include  @babel/preset-react inside my babel confid file.
+-Install npm i -D @testing-library/jest-dom
