@@ -17,6 +17,7 @@ import { useState } from "react";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import Footer from "./Footer";
 
 /*many name of chunking
 chunking
@@ -50,6 +51,7 @@ const AppLayout = () => {
           {/* if we provide value only header uncomment just below line ,for other parts of app the loggedinuser value will be usercontext component value that is "Default user" */}
           {/*   </UserContext.Provider> */}
           <Outlet />
+          <Footer />
         </div>
       </UserContext.Provider>
     </Provider>

@@ -290,32 +290,57 @@
 .emptycarttext {
   text-align: center;
 }
-.contactmaindiv{
+.contactmaindiv {
   font-weight: bold;
   text-align: center;
   font-size: 50px;
   padding: 10px;
   margin: 10px;
-   
 }
-.myform{
+.myform {
   text-align: center;
-  
+
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 200px;
 }
-.inputoffromone ,.inputoffromtwo{
+.inputoffromone,
+.inputoffromtwo {
   padding: 15px;
   margin: 1px 10px;
   margin-bottom: 20px;
-
 }
-.submitbtnconatct{
+.submitbtnconatct {
   padding: 5px 12px;
   margin: 1px 10px;
-
 }
- 
+.footerdiv {
+  height: 200px;
+  width: 100%;
+  background-color: #ebe6e6;
+
+  position: sticky;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.divofftr {
+  padding-top: 10px;
+}
+.divofftr ul li {
+  list-style-type: none;
+  padding-top: 3px;
+}
+
+@media only screen and (max-width: 768px) {
+  .divofftr {
+    /* background-color: lightblue; */
+    /* width: 100vw; */
+    position: sticky;
+    bottom: 0px;
+  }
+}
